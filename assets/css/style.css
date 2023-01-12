@@ -1,11 +1,12 @@
 /*global settings*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background-image: linear-gradient(to right, #26c6da, #03a9f4);
+    /* margin: 0; */
+    /* padding: 0;
+    box-sizing: border-box; */
   }
   
-  body {
+  /* body {
     min-height: 100%;
     line-height: 1;
     font-family: sans-serif;
@@ -17,9 +18,9 @@
 
   nav{
 
-  }
+  } */
 
-/*various headings*/
+/* various headings
 h1 {
   font-size: 300%;
 }
@@ -37,8 +38,8 @@ h3  {
 
 
   /* Matches the font of special elements to the rest of the page */
-  input, select, option, optgroup, textarea, button,
+  /* input, select, option, optgroup, textarea, button,
   pre, code {
     font-size: 100%;
     font-family: inherit;
-  }
+  }  */
