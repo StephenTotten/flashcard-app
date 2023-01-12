@@ -1,5 +1,5 @@
 /*global settings*/
-* {
+body {
   background-image: linear-gradient(to right, #26c6da, #03a9f4);
   font-family: 'Nunito', sans-serif;
   color: black;
@@ -11,6 +11,19 @@
 :root {
   --dark: #212121;
   --light: #f5f5f5; 
+}
+
+button {
+  display: block;
+}
+
+header {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 10px;
+  font-size: 50px;
+  border-bottom: lightslategray solid 5px;
 }
 
 /* body {
