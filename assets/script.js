@@ -8,3 +8,15 @@ const number = ["0","1","2","3","4","5","6","7","8","9","10",];
 const random = Math.floor(Math.random() * number.length);
 console.log(random, number[random]);
 
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+	}
+};
+
+fetch('https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
