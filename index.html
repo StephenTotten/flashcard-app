@@ -1,36 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Learn with Flash</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link 
+    href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" 
+    rel="stylesheet"
+/>
+
 </head>
 
 <body>
     <header id="head">
         <h1 class="title">Flashcards</h1>
     </header>
-    
+
     <!-- Button Section -->
     <aside id="aside">
         <!-- Contains buttons for user selection -->
-        <div>   
+
+        <div class="buttons">   
+
             <button class="flashstack" id="alphabet">Alphabet</button>
             <button class="flashstack" id="numbers">Numbers</button>
             <button class="flashstack" id="definitions">Definitions</button>
             <button class="flashstack" id="custom">Custom</button>
         </div>
+        <div class="form">
+            <form>
+<!-- 5 rows 2 columns // Q&A boxes -->
+        <ul>
+            <li>
+                <label for="custom">Create Your Own</label>
+                <input type="text" id="title" name="title" placeholder="Title">
+            </li>
+            <li>
+                <label for="question-1">Question One</label>
+                <input type="text" id="question-one" name="question-one">
+            </li>
+            <li>
+                <label for="answer-1">Answer</label>
+                <input type="text" id="answer-one" name="answer-one">
+            </li>
+            <li>
+                <label for="question-2">Question Two</label>
+                <input type="text" id="question-two" name="question-two">
+            </li>
+            <li>
+                <label for="answer-2">Answer</label>
+                <input type="text" id="answer-two" name="answer-two">
+            </li>
+            <li>
+                <label for="question-3">Question Three</label>
+                <input type="text" id="question-three" name="question-three">
+            </li>
+                <label for="answer-3">Answer</label>
+                <input type="text" id="answer-three" name="answer-three">
+            <li>
+                <label for="question-4">Question Four</label>
+                <input type="text" id="question-four" name="question-four">
+            </li>
+            <li>
+                <label for="answer-4">Answer</label>
+                <input type="text" id="answer-four" name="answer-four">
+            </li>
+            <li>
+                <label for="question-5">Question Five</label>
+                <input type="text" id="question-five" name="question-five">
+            </li>
+            <li>
+                <label for="answer-5">Answer</label>
+                <input type="text" id="answer-five" name="answer-five">
+            </li>    
+        </ul>
+                <input type="submit" id="submit">
+            </form>
+        </div>
     </aside>
 
     <main id="container">
 
-    <!-- Flashcard Display -->
-    <section>
-<!-- User will see question and click card for answer -->
-    </section>
+        <!-- Flashcard Display -->
+        <section>
+            <!-- User will see question and click card for answer -->
+        </section>
 
     </main>
-<script src="./assets/script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
