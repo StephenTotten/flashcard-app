@@ -1,11 +1,88 @@
 /*global settings*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
+body {
+  background-image: linear-gradient(to right, #26c6da, #03a9f4);
+  font-family: 'Nunito', sans-serif;
+  color: black;
+  /* margin: 0; */
+  /* padding: 0;
+    box-sizing: border-box; */
+}
+
+:root {
+  --dark: #212121;
+  --light: #f5f5f5; 
+}
+
+
+.card {
+  /* Add shadows to create the "card" effect */
+  height: 250px;
+  width: 250px;
+  background-image: none;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 2em;
+
+#aside {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.buttons {
+  display:grid;
+  margin-top: 5%;
+  width: 50%;
+}
+
+button {
+  margin-top: 2%;
+}
+
+header {
+  display: flex;
+  float:inline-start;
+  justify-content:center;
+  align-items: center;
+  padding: 10px;
+  font-size: 50px;
+  border-bottom: lightslategray solid 5px;
+}
+
+ul {
+  width: 100%;
+  margin-top: 20px;
+  float:inline-end;
+}
+
+#custom-title {
+  width: 99%;
+
+}
+
+ul li {
+  width: 49%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+ul li > * {
+  width: 100%;
+}
+
+#container {
+  display: flex;
+  width: 70%;
+}
+
+#submit {
+  justify-content: center;
+}
+
+
+
+/* body {
     min-height: 100%;
     line-height: 1;
     font-family: sans-serif;
@@ -17,28 +94,20 @@
 
   nav{
 
-  }
+  } */
 
-/*various headings*/
+/* various headings
 h1 {
   font-size: 300%;
+
 }
 
-h2 {
-  font-size: 200%;
-}  
-
-h3  {
-  font-size: 150%;
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-  ol, ul {
-    list-style: none;
-  }
 
-
-  /* Matches the font of special elements to the rest of the page */
-  input, select, option, optgroup, textarea, button,
-  pre, code {
-    font-size: 100%;
-    font-family: inherit;
-  }
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
