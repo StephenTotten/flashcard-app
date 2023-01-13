@@ -23,7 +23,7 @@ Our original wireframe includes a header, aside, and body section. Our aside ser
 With this project currently being about proof of concept, future deployments may include more features. These features may include a more detailed cirriculum and even miscellaneous categories like famous movies and their quotes.
 
 # Collaborators
-- Steven Totten (https://github.com/Crothos)
+- Stephen Totten (https://github.com/Crothos)
 - Ryan Damron (https://github.com/RyanDamron)
 - Jared Gibson (https://github.com/jared-GG747)
 - Holden Claus (https://github.com/HoldyClaus)
