@@ -17,9 +17,7 @@ var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
 
-alphabetButton.addEventListener("click", function(){
-	console.log(alphabetButton);
-})
+alphabetButton.addEventListener("click", displayAlpha);
 
 numbersButton.addEventListener("click", function(){
 	console.log(numbersButton);
@@ -91,3 +89,18 @@ const random = Math.floor(Math.random() * number.length);
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
 
+function displayAlpha(){
+    
+
+	function getRandomItem(alphaArray) {
+		var randomIndex = Math.floor(Math.random() * alphaArray.length);
+		var item = alphaArray[randomIndex];
+		return item;
+	}
+	
+	var result = getRandomItem(alphaArray);
+	var letterDisp = document.createElement("h1");
+	letterDisp.innerHTML = result;
+	document.getElementById("content1").appendChild(letterDisp);
+	}
+	
