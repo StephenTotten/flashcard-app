@@ -1,8 +1,8 @@
+var container = document.getElementById("container");
 
+// Letters Array
+var alphaArray = ["A", "B", "C", "D", "E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-// Letters Arrays
-var alphaUpperArray = ["A", "B", "C", "D", "E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var alphaLowerArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 // Numbers Arrays
 const number = ["0","1","2","3","4","5","6","7","8","9","10",];
@@ -15,7 +15,11 @@ const number2 = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight",
 const random = Math.floor(Math.random() * number.length);
 
 
+
+// WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
+
 // // WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
+
 
 // const options = {
 // 	method: 'GET',
@@ -30,6 +34,10 @@ const random = Math.floor(Math.random() * number.length);
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
 
+
+
+// Function to show Alphabet cards
+
 // // Cities and Countries Fetch Request
 // const options2 = {
 // 	method: 'GET',
@@ -43,4 +51,5 @@ const random = Math.floor(Math.random() * number.length);
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
+
 
