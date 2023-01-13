@@ -34,13 +34,3 @@ fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
 	//on submit, store questions and answers into object as key,value pair
 	//on submit, store questions and answers into array as key-value pair objects
 	//console.log to make sure they're stored properly
-
-	addEventListener("click", function(event) {
-		event.preventDefault();
-		var userTitle = document.getElementById("title").value;
-		var cardItems = {
-			question: question,
-			answer: answer
-		}
-		console.log(cardItems)
-	})
