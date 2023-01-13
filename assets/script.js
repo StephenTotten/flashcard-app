@@ -28,3 +28,19 @@ fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+
+	//submit form event listener
+	//on submit, store questions and answers into object as key,value pair
+	//on submit, store questions and answers into array as key-value pair objects
+	//console.log to make sure they're stored properly
+
+	addEventListener("click", function(event) {
+		event.preventDefault();
+		var userTitle = document.getElementById("title").value;
+		var cardItems = {
+			question: question,
+			answer: answer
+		}
+		console.log(cardItems)
+	})
