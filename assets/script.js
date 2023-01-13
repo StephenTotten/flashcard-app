@@ -5,33 +5,20 @@ var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 
 alphabetButton.addEventListener("click", function(){
-	var alpha = document.getElementById("alphabet");
-	if (alpha.style.display )
-
 	console.log(alphabetButton);
 })
 
 numbersButton.addEventListener("click", function(){
-	var num = document.getElementById("alphabet");
-	if (num.style.display )
-
 	console.log(numbersButton);
 })
 
 definitionsButton.addEventListener("click", function(){
-	var def = document.getElementById("alphabet");
-	if (def.style.display )
-
 	console.log(definitionsButton);
 })
 
 customButton.addEventListener("click", function(){
-	var cust = document.getElementById("alphabet");
-	if (cust.style.display )
-
 	console.log(customButton);
 })
-
 var container = document.getElementById("container");
 
 
