@@ -26,4 +26,4 @@ With this project currently being about proof of concept, future deployments may
 - Steven Totten (https://github.com/Crothos)
 - Ryan Damron (https://github.com/RyanDamron)
 - Jared Gibson (https://github.com/jared-GG747)
-- Holden Claus (https://github.com/RyanDamron)
+- Holden Claus (https://github.com/HoldyClaus)
