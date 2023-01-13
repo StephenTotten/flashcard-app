@@ -15,6 +15,7 @@ var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
+var citiesButton = document.querySelector("#cities")
 
 alphabetButton.addEventListener("click", function(){
 	console.log(alphabetButton);
@@ -30,6 +31,10 @@ definitionsButton.addEventListener("click", function(){
 
 customButton.addEventListener("click", function(){
 	console.log(customButton);
+})
+
+citiesButton.addEventListener("click", function(){
+	console.log(citiesButton);
 })
 var container = document.getElementById("container");
 
