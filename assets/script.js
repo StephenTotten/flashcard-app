@@ -1,4 +1,16 @@
 
+let numbers = [];
+for (var i = 0; i <= 100; i++){
+    numbers.push(i);
+}
+
+function randNumber(arr) {
+    var randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+    
+}
+console.log(randNumber(numbers));
+
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
@@ -73,5 +85,4 @@ const random = Math.floor(Math.random() * number.length);
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
-
 
