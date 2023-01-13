@@ -17,9 +17,7 @@ var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
 
-alphabetButton.addEventListener("click", function(){
-	console.log(alphabetButton);
-})
+alphabetButton.addEventListener("click", displayAlpha);
 
 numbersButton.addEventListener("click", function(){
 	console.log(numbersButton);
