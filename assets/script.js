@@ -15,22 +15,32 @@ const number2 = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight",
 const random = Math.floor(Math.random() * number.length);
 
 
-// WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
-		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-	}
-};
+// // WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
 
-fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+// 		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+// 	}
+// };
 
+// fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 
-	//submit form event listener
-	//on submit, store questions and answers into object as key,value pair
-	//on submit, store questions and answers into array as key-value pair objects
-	//console.log to make sure they're stored properly
+// // Cities and Countries Fetch Request
+// const options2 = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+// 		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
