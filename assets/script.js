@@ -15,7 +15,7 @@ const number2 = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight",
 const random = Math.floor(Math.random() * number.length);
 
 
-// WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
+// // WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
 
 // const options = {
 // 	method: 'GET',
@@ -43,3 +43,4 @@ const random = Math.floor(Math.random() * number.length);
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
+
