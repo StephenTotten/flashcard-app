@@ -29,9 +29,11 @@
             <button class="flashstack" id="numbers">Numbers</button>
             <button class="flashstack" id="definitions">Definitions</button>
             <button class="flashstack" id="custom">Custom</button>
+            <button class="flashstack" id="cities">cities</button>
         </div>
         <div id="form">
             <form>
+
                 <!-- 5 rows 2 columns // Q&A boxes -->
                 <ul>
                     <li id="custom-title">
@@ -60,6 +62,55 @@
                         <input type="text" id="answer-5" name="answer-five" placeholder="Answer Five">
                     </li>
                 </ul>
+
+<!-- 5 rows 2 columns // Q&A boxes -->
+        <ul>
+            <li id="custom-title">
+                <label for="custom">Create Your Own</label>
+                <input type="text" id="title" name="title" placeholder="Title">
+            </li>
+            <li>
+                <label for="question-1">Question 1</label>
+                <input type="text" id="question-one" name="question-one">
+            </li>
+            <li>
+                <label for="answer-1">Answer</label>
+                <input type="text" id="answer-one" name="answer-one">
+            </li>
+            <li>
+                <label for="question-2">Question 2</label>
+                <input type="text" id="question-two" name="question-two">
+            </li>
+            <li>
+                <label for="answer-2">Answer</label>
+                <input type="text" id="answer-two" name="answer-two">
+            </li>
+            <li>
+                <label for="question-3">Question 3</label>
+                <input type="text" id="question-three" name="question-three">
+            </li>
+            <li>
+                <label for="answer-3">Answer</label>
+                <input type="text" id="answer-three" name="answer-three">
+            <li>
+                <label for="question-4">Question 4</label>
+                <input type="text" id="question-four" name="question-four">
+            </li>
+            </li>
+            <li>
+                <label for="answer-4">Answer</label>
+                <input type="text" id="answer-four" name="answer-four">
+            </li>
+            <li>
+                <label for="question-5">Question 5</label>
+                <input type="text" id="question-five" name="question-five">
+            </li>
+            <li>
+                <label for="answer-5">Answer</label>
+                <input type="text" id="answer-five" name="answer-five">
+            </li>    
+        </ul>
+
                 <input type="submit" id="submit">
             </form>
         </div>
@@ -69,10 +120,11 @@
 
     <main id="container">
 
-        <!-- Flashcard Display -->
-        <section>
-            <!-- User will see question and click card for answer -->
-        </section>
+        <div class="card">
+            <div class="content">
+              <h1 id="content1"><b></b></h1>
+            </div>
+          </div>
 
     </main>
     <script src="./assets/script.js"></script>
