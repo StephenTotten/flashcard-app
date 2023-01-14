@@ -107,6 +107,13 @@ function displayAlpha() {
 	}
 
 	var result = getRandomItem(alphaArray);
+
 	var cardBlank = document.getElementById("content1");
 	cardBlank.innerHTML = result;
 }
+
+	var test = document.getElementById("content1");
+	test.innerHTML = result;
+	}
+	
+
