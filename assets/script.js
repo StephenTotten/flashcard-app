@@ -99,8 +99,7 @@ function displayAlpha(){
 	}
 	
 	var result = getRandomItem(alphaArray);
-	var letterDisp = document.createElement("h1");
-	letterDisp.innerHTML = result;
-	document.getElementById("content1").appendChild(letterDisp);
+	var test = document.getElementById("content1");
+	test.innerHTML = result;
 	}
 	
