@@ -29,9 +29,7 @@ numbersButton.addEventListener("click", function () {
 
 definitionsButton.addEventListener("click", getWord);
 
-customButton.addEventListener("click", function () {
-	console.log(customButton);
-})
+
 
 citiesButton.addEventListener("click", getCities);
 
@@ -139,12 +137,8 @@ fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-function hideForm() {
-	document.getElementById("form").setAttribute("hidden", true);
-}
-hideForm();
+
 var customForm = document.getElementById("form");
-var customButton = document.getElementById("custom");
 customButton.addEventListener("click", function (event) {
 	event.preventDefault();
 	if (customForm === "block") {
@@ -203,15 +197,6 @@ submitBtn.addEventListener("click", function (event) {
 		errorMessage.innerHTML= "Please fill out every blank!";
 	}
 
-	// function addCustomButton () {
-	// 	var customButton = document.createElement('button');
-	// 	var buttons = document.getElementsByClassName("buttons");
-	// 	customButton.setAttribute("class", "flashstack")
-	// 	customButton.appendChild(document.createTextNode(userTitle));
-	// 	// customButton.textContent = userTitle
-	// 	buttons.appendChild(customButton);
-	// }
-	// addCustomButton();
 
 });
 
