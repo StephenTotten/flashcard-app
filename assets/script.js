@@ -1,3 +1,4 @@
+var word;
 
 let numbers = [];
 for (var i = 0; i <= 100; i++){
@@ -23,9 +24,7 @@ numbersButton.addEventListener("click", function(){
 	console.log(numbersButton);
 })
 
-definitionsButton.addEventListener("click", function(){
-	console.log(definitionsButton);
-})
+definitionsButton.addEventListener("click", getWord);
 
 customButton.addEventListener("click", function(){
 	console.log(customButton);
@@ -55,25 +54,32 @@ const random = Math.floor(Math.random() * number.length);
 
 // WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
 
-// // WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
+function getWord(){
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+	}
+};
 
+fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function(data) {
+		console.log(data)
+		word = data.word;
+	})
+	displayWord();
 
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
-// 		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-
-
-// Function to show Alphabet cards
+	function displayWord(){
+	
+	// var definition = data.results[0].definition;
+	var cardBlank = document.getElementById("content1");
+	cardBlank.innerHTML = word;
+}
+}
 
 // // Cities and Countries Fetch Request
 // const options2 = {
@@ -99,8 +105,6 @@ function displayAlpha(){
 	}
 	
 	var result = getRandomItem(alphaArray);
-	var letterDisp = document.createElement("h1");
-	letterDisp.innerHTML = result;
-	document.getElementById("content1").appendChild(letterDisp);
+	var cardBlank = document.getElementById("content1");
+	cardBlank.innerHTML = result;
 	}
-	
