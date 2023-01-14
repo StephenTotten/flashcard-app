@@ -85,6 +85,10 @@ ul li > * {
   justify-content: center;
 }
 
+#form {
+  display: none;
+}
+
 
 
 /* body {

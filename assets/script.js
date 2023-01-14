@@ -29,14 +29,25 @@ fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-//
+function hideForm() {
+	document.getElementById("form").setAttribute("hidden", true);
+}
+hideForm();
+var customForm = document.getElementById("form");
+var customButton = document.getElementById("custom");
+customButton.addEventListener("click", function (event) {
+	event.preventDefault();
+	if (customForm === "block") {
+		customForm.style.display = "none";
+	}else {
+		customForm.style.display = "block";
+	}
+});
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
-	// removeMessage();
-	
 	
 	var userTitle = document.getElementById("title").value;
 	var userQuestionOne = document.getElementById("question-one").children[0].value;
@@ -49,10 +60,7 @@ submitBtn.addEventListener("click", function (event) {
 	var userAnswerFour = document.getElementById("question-four").children[1].value;
 	var userQuestionFive = document.getElementById("question-five").children[0].value;
 	var userAnswerFive = document.getElementById("question-five").children[1].value;
-	// var cardItems = { 
-	//  question: question, 
-	//  answer: answer 
-	// } 
+
 	console.log("Title: " + userTitle);
 	console.log("Question 1: " + userQuestionOne);
 	console.log("Answer 1: " + userAnswerOne)
@@ -71,11 +79,6 @@ submitBtn.addEventListener("click", function (event) {
 	}
 	console.log(cardBank);
 	if (userTitle === "") {
-		// var titleMessage = document.createElement("p");
-		// titleMessage.setAttribute("style", "color: red; font-size: 30px");
-		// var customLabel = document.getElementById("custom-label");
-		// titleMessage.innerHTML = ("Please include a title!");
-		// customLabel.append(titleMessage);
 		errorMessage.innerHTML = "Please include a title!";
 	} else if (userQuestionOne === ""
 		|| userAnswerOne === ""
@@ -87,22 +90,19 @@ submitBtn.addEventListener("click", function (event) {
 		|| userAnswerFour === ""
 		|| userQuestionFive === ""
 		|| userAnswerFive === "") {
-		// var fillMessage = document.createElement("p");
-		// var customLabel = document.getElementById("custom-label");
-		// fillMessage.setAttribute("style", "color: red; font-size: 30px");
-		// fillMessage.innerHTML = ("Please fill out every blank!");
-		// customLabel.append(fillMessage);
-		
 		errorMessage.innerHTML= "Please fill out every blank!";
-		
 	}
-	// console.log(customLabel.childNodes[1].innerHTML);
-	// function removeMessage () {
-	// 	fillMessage.innerHTML = ("");
-	// 	titleMessage.innerHTML = ("");
+
+	// function addCustomButton () {
+	// 	var customButton = document.createElement('button');
+	// 	var buttons = document.getElementsByClassName("buttons");
+	// 	customButton.setAttribute("class", "flashstack")
+	// 	customButton.appendChild(document.createTextNode(userTitle));
+	// 	// customButton.textContent = userTitle
+	// 	buttons.appendChild(customButton);
 	// }
-	
-	
+	// addCustomButton();
+
 });
 
 console.log
