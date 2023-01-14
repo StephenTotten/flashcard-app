@@ -1,5 +1,7 @@
 var word;
 var definit;
+var city;
+var country;
 
 let numbers = [];
 for (var i = 0; i <= 100; i++) {
@@ -31,9 +33,8 @@ customButton.addEventListener("click", function () {
 	console.log(customButton);
 })
 
-citiesButton.addEventListener("click", function () {
-	console.log(citiesButton);
-})
+citiesButton.addEventListener("click", getCities);
+
 var container = document.getElementById("container");
 
 
@@ -89,38 +90,47 @@ function getWord() {
 	}
 }
 
-// // Cities and Countries Fetch Request
-// const options2 = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
-// 		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-// 	}
-// };
+// Cities and Countries Fetch Request
+function getCities(){
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+	}
+};
 
-// fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
+fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
+	.then(function (response) {
+	return response.json();
+})
+.then(function (data) {
+	console.log(data);
+	var randomIndex = Math.floor(Math.random() * 5);
+	city = data.data[randomIndex].city;
+	country = data.data[randomIndex].country;
+	displayCity();
+})
+
+function displayCity() {
+	var cardBlank = document.getElementById("content1");
+		cardBlank.innerHTML = city;
+		console.log(country);
+}
+}
 
 function displayAlpha() {
-
 
 	function getRandomItem(alphaArray) {
 		var randomIndex = Math.floor(Math.random() * alphaArray.length);
 		var item = alphaArray[randomIndex];
 		return item;
 	}
-
 	var result = getRandomItem(alphaArray);
-
 	var cardBlank = document.getElementById("content1");
 	cardBlank.innerHTML = result;
 }
 
-	var test = document.getElementById("content1");
-	test.innerHTML = result;
-	}
 	
 
 
