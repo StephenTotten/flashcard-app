@@ -31,8 +31,38 @@
             <button class="flashstack" id="custom">Custom</button>
             <button class="flashstack" id="cities">cities</button>
         </div>
-        <div class="form">
+        <div id="form">
             <form>
+
+                <!-- 5 rows 2 columns // Q&A boxes -->
+                <ul>
+                    <li id="custom-title">
+                        <label id="custom-label" for="custom">Create Your Own</label>
+                        <p id="error-message"></p>
+                        <input type="text" id="title" name="title" placeholder="Title">
+                    </li>
+                    <li id="question-one" class="question">
+                        <input type="text" id="question-one" name="question-one" placeholder="Question One">
+                        <input type="text" id="answer-one" name="answer-one" placeholder="Answer One">
+                    </li>
+                    <li id="question-two" class="question">
+                        <input type="text" id="question-2" name="question-two" placeholder="Question Two">
+                        <input type="text" id="answer-2" name="answer-two" placeholder="Answer Two">
+                    </li>
+                    <li id="question-three" class="question">
+                        <input type="text" id="question-3" name="question-three" placeholder="Question Three">
+                        <input type="text" id="answer-3" name="answer-three" placeholder="Answer Three">
+                    </li>
+                    <li id="question-four" class="question">
+                        <input type="text" id="question-4" name="question-four" placeholder="Question Four">
+                        <input type="text" id="answer-4" name="answer-four" placeholder="Answer Four">
+                    </li>
+                    <li id="question-five" class="question">
+                        <input type="text" id="question-5" name="question-five" placeholder="Question Five">
+                        <input type="text" id="answer-5" name="answer-five" placeholder="Answer Five">
+                    </li>
+                </ul>
+
 <!-- 5 rows 2 columns // Q&A boxes -->
         <ul>
             <li id="custom-title">
@@ -80,8 +110,11 @@
                 <input type="text" id="answer-five" name="answer-five">
             </li>    
         </ul>
+
                 <input type="submit" id="submit">
             </form>
+        </div>
+    </aside>
         </div>
     </aside>
 
