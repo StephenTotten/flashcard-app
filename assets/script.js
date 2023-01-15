@@ -2,6 +2,7 @@ var word;
 var definit;
 var city;
 var country;
+var customObj;
 
 let numbers = [];
 for (var i = 0; i <= 100; i++) {
@@ -20,6 +21,7 @@ var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
+var form = document.getElementById('form2');
 
 alphabetButton.addEventListener("click", displayAlpha);
 
@@ -30,6 +32,7 @@ numbersButton.addEventListener("click", function () {
 definitionsButton.addEventListener("click", getWord);
 
 
+form.addEventListener('submit', displayCustom);
 
 citiesButton.addEventListener("click", getCities);
 
@@ -129,6 +132,7 @@ function displayAlpha() {
 	cardBlank.innerHTML = result;
 }
 
+
 //Card Flip Function
 const card = document.getElementById("card")
 
@@ -136,6 +140,7 @@ card.addEventListener("click",flipCard)
 function flipCard(){
     card.classList.toggle("flipCard");
 }
+
 
 
 // fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
@@ -188,6 +193,7 @@ submitBtn.addEventListener("click", function (event) {
 		answer5: userAnswerFive,
 	}
 	console.log(cardBank);
+	customObj = cardBank;
 	if (userTitle === "") {
 		errorMessage.innerHTML = "Please include a title!";
 	} else if (userQuestionOne === ""
@@ -203,8 +209,19 @@ submitBtn.addEventListener("click", function (event) {
 		errorMessage.innerHTML= "Please fill out every blank!";
 	}
 
-
+	displayCustom();
 });
 
-console.log
+function displayCustom() {
+	var cardBlank = document.getElementById("content1");
+	cardBlank.innerHTML = customObj.question1;
+	showNextButton();
+	function showNextButton() {
+		var x = document.createElement("BUTTON");
+		var t = document.createTextNode(">> Next Card >>");
+		x.appendChild(t);
+		container.appendChild(x);
+	  }
+}
+
 
