@@ -132,10 +132,10 @@ function displayAlpha() {
 	
 
 
-fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 
 
 var customForm = document.getElementById("form");
@@ -154,16 +154,16 @@ submitBtn.addEventListener("click", function (event) {
 	errorMessage.innerHTML = "";
 	
 	var userTitle = document.getElementById("title").value;
-	var userQuestionOne = document.getElementById("question-one").children[0].value;
-	var userAnswerOne = document.getElementById("question-one").children[1].value;
-	var userQuestionTwo = document.getElementById("question-two").children[0].value;
-	var userAnswerTwo = document.getElementById("question-two").children[1].value;
-	var userQuestionThree = document.getElementById("question-three").children[0].value;
-	var userAnswerThree = document.getElementById("question-three").children[1].value;
-	var userQuestionFour = document.getElementById("question-four").children[0].value;
-	var userAnswerFour = document.getElementById("question-four").children[1].value;
-	var userQuestionFive = document.getElementById("question-five").children[0].value;
-	var userAnswerFive = document.getElementById("question-five").children[1].value;
+	var userQuestionOne = document.getElementById("question-one").value;
+	var userAnswerOne = document.getElementById("answer-one").value;
+	var userQuestionTwo = document.getElementById("question-two").value;
+	var userAnswerTwo = document.getElementById("answer-two").value;
+	var userQuestionThree = document.getElementById("question-three").value;
+	var userAnswerThree = document.getElementById("answer-three").value;
+	var userQuestionFour = document.getElementById("question-four").value;
+	var userAnswerFour = document.getElementById("answer-four").value;
+	var userQuestionFive = document.getElementById("question-five").value;
+	var userAnswerFive = document.getElementById("answer-five").value;
 
 	console.log("Title: " + userTitle);
 	console.log("Question 1: " + userQuestionOne);
