@@ -32,9 +32,86 @@ body {
 }
 
 .buttons {
-  display:grid;
   margin-top: 5%;
+  font-size: 24px;
   width: 50%;
+  text-align: center;
+  display: grid;
+}
+
+.flashstack1
+{
+  background-color: white; 
+  color: black; 
+  border: 2px solid green;
+  border-radius: 8px;
+}
+
+.flashstack1:hover
+{
+  background-color: green; 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.flashstack2
+{
+  background-color: white; 
+  color: black; 
+  border: 2px solid blue;
+  border-radius: 8px;
+}
+
+.flashstack2:hover
+{
+  background-color: blue; 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.flashstack3
+{
+  background-color: white; 
+  color: black; 
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+.flashstack3:hover
+{
+  background-color: red; 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.flashstack4
+{
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.flashstack4:hover
+{
+  background-color: black; 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.flashstack5
+{
+  background-color: white; 
+  color: black; 
+  border: 2px solid gray;
+  border-radius: 8px;
+}
+
+.flashstack5:hover
+{
+  background-color: gray; 
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 button {
