@@ -37,7 +37,7 @@ form.addEventListener('submit', displayCustom);
 citiesButton.addEventListener("click", getCities);
 
 var container = document.getElementById("container");
-
+var cardContainer = document.getElementById("cardcontainer");
 
 // Letters Array
 var alphaArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -85,9 +85,10 @@ function getWord() {
 	
 
 	function displayWord() {
-		var cardBlank = document.getElementById("content1");
+		var cardBlank = document.getElementById("front");
+		var cardBack = document.getElementById("back");
 		cardBlank.innerHTML = word;
-		console.log(definit);
+		cardBack.innerHTML = definit;
 	}
 }
 
@@ -114,9 +115,10 @@ fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
 })
 
 function displayCity() {
-	var cardBlank = document.getElementById("content1");
+	var cardBlank = document.getElementById("front");
 		cardBlank.innerHTML = city;
-		console.log(country);
+	var cardBack = document.getElementById("back");
+		cardBack.innerHTML = country;
 }
 }
 
@@ -128,7 +130,7 @@ function displayAlpha() {
 		return item;
 	}
 	var result = getRandomItem(alphaArray);
-	var cardBlank = document.getElementById("content1");
+	var cardBlank = document.getElementById("front");
 	cardBlank.innerHTML = result;
 }
 
@@ -213,14 +215,16 @@ submitBtn.addEventListener("click", function (event) {
 });
 
 function displayCustom() {
-	var cardBlank = document.getElementById("content1");
+	var cardBlank = document.getElementById("front");
+	var cardBack = document.getElementById("back");
 	cardBlank.innerHTML = customObj.question1;
+	cardBack.innerHTML = customObj.answer1;
 	showNextButton();
 	function showNextButton() {
 		var x = document.createElement("BUTTON");
 		var t = document.createTextNode(">> Next Card >>");
 		x.appendChild(t);
-		container.appendChild(x);
+		cardContainer.appendChild(x);
 	  }
 }
 
