@@ -205,6 +205,13 @@ submitBtn.addEventListener("click", function (event) {
 function displayCustom() {
 	var cardBlank = document.getElementById("content1");
 	cardBlank.innerHTML = customObj.question1;
+	showNextButton();
+	function showNextButton() {
+		var x = document.createElement("BUTTON");
+		var t = document.createTextNode(">> Next Card >>");
+		x.appendChild(t);
+		container.appendChild(x);
+	  }
 }
 
 
