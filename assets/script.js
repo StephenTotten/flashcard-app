@@ -129,7 +129,13 @@ function displayAlpha() {
 	cardBlank.innerHTML = result;
 }
 
-	
+//Card Flip Function
+const card = document.getElementById("card")
+
+card.addEventListener("click",flipCard)
+function flipCard(){
+    card.classList.toggle("flipCard");
+}
 
 
 // fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
