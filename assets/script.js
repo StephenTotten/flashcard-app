@@ -82,7 +82,7 @@ function getWord() {
 			definit = data.results[0].definition;
 			displayWord();
 		})
-	
+
 
 	function displayWord() {
 		var cardBlank = document.getElementById("front");
@@ -93,33 +93,33 @@ function getWord() {
 }
 
 // Cities and Countries Fetch Request
-function getCities(){
-const options2 = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
-		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-	}
-};
+function getCities() {
+	const options2 = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': '9c87cf3d42msh23dac74cec4328bp1b4dbdjsnc47d2a2101c4',
+			'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+		}
+	};
 
-fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
-	.then(function (response) {
-	return response.json();
-})
-.then(function (data) {
-	console.log(data);
-	var randomIndex = Math.floor(Math.random() * 5);
-	city = data.data[randomIndex].city;
-	country = data.data[randomIndex].country;
-	displayCity();
-})
+	fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', options2)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
+			var randomIndex = Math.floor(Math.random() * 5);
+			city = data.data[randomIndex].city;
+			country = data.data[randomIndex].country;
+			displayCity();
+		})
 
-function displayCity() {
-	var cardBlank = document.getElementById("front");
+	function displayCity() {
+		var cardBlank = document.getElementById("front");
 		cardBlank.innerHTML = city;
-	var cardBack = document.getElementById("back");
+		var cardBack = document.getElementById("back");
 		cardBack.innerHTML = country;
-}
+	}
 }
 
 function displayAlpha() {
@@ -138,9 +138,9 @@ function displayAlpha() {
 //Card Flip Function
 const card = document.getElementById("card")
 
-card.addEventListener("click",flipCard)
-function flipCard(){
-    card.classList.toggle("flipCard");
+card.addEventListener("click", flipCard)
+function flipCard() {
+	card.classList.toggle("flipCard");
 }
 
 
@@ -156,7 +156,7 @@ customButton.addEventListener("click", function (event) {
 	event.preventDefault();
 	if (customForm === "block") {
 		customForm.style.display = "none";
-	}else {
+	} else {
 		customForm.style.display = "block";
 	}
 });
@@ -165,7 +165,7 @@ submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
-	
+
 	var userTitle = document.getElementById("title").value;
 	var userQuestionOne = document.getElementById("question-one").value;
 	var userAnswerOne = document.getElementById("answer-one").value;
@@ -208,7 +208,7 @@ submitBtn.addEventListener("click", function (event) {
 		|| userAnswerFour === ""
 		|| userQuestionFive === ""
 		|| userAnswerFive === "") {
-		errorMessage.innerHTML= "Please fill out every blank!";
+		errorMessage.innerHTML = "Please fill out every blank!";
 	}
 
 	displayCustom();
@@ -224,8 +224,34 @@ function displayCustom() {
 		var x = document.createElement("BUTTON");
 		var t = document.createTextNode(">> Next Card >>");
 		x.appendChild(t);
+		submitBtn.style.display = "none";
 		cardContainer.appendChild(x);
-	  }
+		x.addEventListener("click", function (event) {
+			event.preventDefault();
+			flipCard();
+			if (cardBlank.innerHTML == customObj.question1 &&
+				cardBack.innerHTML == customObj.answer1) {
+				cardBlank.innerHTML = customObj.question2
+				cardBack.innerHTML = customObj.answer2
+			} else if (cardBlank.innerHTML == customObj.question2 &&
+				cardBack.innerHTML == customObj.answer2) {
+				cardBlank.innerHTML = customObj.question3
+				cardBack.innerHTML = customObj.answer3
+			} else if (cardBlank.innerHTML == customObj.question3 &&
+				cardBack.innerHTML == customObj.answer3) {
+				cardBlank.innerHTML = customObj.question4
+				cardBack.innerHTML = customObj.answer4
+			} else if (cardBlank.innerHTML == customObj.question4 &&
+				cardBack.innerHTML == customObj.answer4) {
+				cardBlank.innerHTML = customObj.question5
+				cardBack.innerHTML = customObj.answer5
+			} else if (cardBlank.innerHTML == customObj.question5 &&
+				cardBack.innerHTML == customObj.answer5) {
+				cardBlank.innerHTML = customObj.question1
+				cardBack.innerHTML = customObj.answer1
+			}
+			
+		})
+	}
+
 }
-
-
