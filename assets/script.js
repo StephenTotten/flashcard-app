@@ -131,6 +131,8 @@ function displayAlpha() {
 	}
 	var result = getRandomItem(alphaArray);
 	var cardBlank = document.getElementById("front");
+	var cardBack = document.getElementById("back");
+	cardBack.innerHTML = result;
 	cardBlank.innerHTML = result;
 }
 
