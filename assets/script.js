@@ -72,7 +72,7 @@ function getWord() {
 		}
 	};
 
-	fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
+	fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true&hasDetails=definitions', options)
 		.then(function (response) {
 			return response.json();
 		})
