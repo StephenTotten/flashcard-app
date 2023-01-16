@@ -1,6 +1,6 @@
 /*global settings*/
 body {
-  background-image: linear-gradient(to right, #26c6da, #03a9f4);
+  background-image: radial-gradient(white, lightblue);
   font-family: 'Nunito', sans-serif;
   color: black;
   /* margin: 0; */
@@ -27,7 +27,7 @@ body {
 .card {
   /* Add shadows to create the "card" effect */
   height: 300px;
-  width: 300px;
+  width: 600px;
   background-image: none;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -46,7 +46,7 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: white;
+  background: radial-gradient(white,lightblue);
   color: black;
   display: flex;
   justify-content: center;
@@ -59,7 +59,7 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: white;
+  background: radial-gradient(white,lightblue);
   color: black;
   display: flex;
   justify-content: center;
@@ -76,6 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 25%;
+  margin: 2em;
 }
 
 .buttons {
@@ -173,6 +174,7 @@ header {
   padding: 10px;
   font-size: 50px;
   border-bottom: lightslategray solid 5px;
+  font-family: 'system-ui';
 }
 
 ul {
@@ -190,7 +192,6 @@ ul {
 
 #custom-title {
   width: 99%;
-
 }
 
 ul li {
