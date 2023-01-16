@@ -70,6 +70,7 @@ body {
   transform: rotateY(180deg);
   border-radius: 12px;
   font-size: 45px;
+  padding: 1em;
 }
 
 .flipCard{
