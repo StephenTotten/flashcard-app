@@ -235,7 +235,10 @@ function displayCustom() {
 		cardContainer.appendChild(x);
 		x.addEventListener("click", function (event) {
 			event.preventDefault();
-			flipCard();
+			if (cardBack.style.display = "visible") {
+				flipCard();
+			}
+
 			if (cardBlank.innerHTML == customObj.question1 &&
 				cardBack.innerHTML == customObj.answer1) {
 				cardBlank.innerHTML = customObj.question2
