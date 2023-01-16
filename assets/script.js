@@ -4,18 +4,6 @@ var city;
 var country;
 var customObj;
 
-let numbers = [];
-for (var i = 0; i <= 100; i++) {
-	numbers.push(i);
-}
-
-function randNumber(arr) {
-	var randomIndex = Math.floor(Math.random() * arr.length);
-	return arr[randomIndex];
-
-}
-console.log(randNumber(numbers));
-
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
@@ -25,9 +13,7 @@ var form = document.getElementById('form2');
 
 alphabetButton.addEventListener("click", displayAlpha);
 
-numbersButton.addEventListener("click", function () {
-	console.log(numbersButton);
-})
+numbersButton.addEventListener("click", displayNumber);
 
 definitionsButton.addEventListener("click", getWord);
 
@@ -136,6 +122,25 @@ function displayAlpha() {
 	cardBlank.innerHTML = result;
 }
 
+let numbers = [];
+for (var i = 0; i <= 100; i++) {
+	numbers.push(i);
+}
+
+function displayNumber() {
+
+	function randNumber(arr) {
+		var randomIndex = Math.floor(Math.random() * arr.length);
+		var num = arr[randomIndex];
+		return num;
+	}
+	var answer = randNumber(numbers);
+	var cardF = document.getElementById("front");
+	var cardB = document.getElementById("back");
+	cardF.innerHTML = answer;
+	cardB.innerHTML = answer;
+
+}
 
 //Card Flip Function
 const card = document.getElementById("card")
