@@ -170,6 +170,11 @@ customButton.addEventListener("click", function (event) {
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
+	var buttonsGroup = document.getElementById("buttons");
+    var newButton = document.createElement("button");
+    newButton.setAttribute("class", "flashstackcustom")
+    newButton.textContent = document.getElementById("title").value;
+    buttonsGroup.appendChild(newButton);
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
 
