@@ -3,7 +3,7 @@ var definit;
 var city;
 var country;
 var customObj;
-var saveButton;
+
 
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
@@ -11,12 +11,14 @@ var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
 var form = document.getElementById('form2');
+var saveButton = document.getElementById("flashstackcustom");
 
 alphabetButton.addEventListener("click", displayAlpha);
 numbersButton.addEventListener("click", displayNumber);
 definitionsButton.addEventListener("click", getWord);
 form.addEventListener('submit', displayCustom);
 citiesButton.addEventListener("click", getCities);
+saveButton.addEventListener("click", displaySaved);
 
 
 var container = document.getElementById("container");
@@ -158,8 +160,8 @@ customButton.addEventListener("click", function (event) {
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
-    var newButton = document.getElementById("flashstackcustom");
-    newButton.textContent = document.getElementById("title").value;
+    //var newButton = document.getElementById("flashstackcustom");
+    //newButton.textContent = document.getElementById("title").value;
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
 
