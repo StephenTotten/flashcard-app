@@ -73,8 +73,8 @@ function getWord() {
 	function displayWord() {
 		var cardBlank = document.getElementById("front");
 		var cardBack = document.getElementById("back");
-		cardBlank.innerHTML = "<b>Word:&nbsp </b>" + word;
-		cardBack.innerHTML = "<b>Definition:&nbsp </b>" + definit;
+		cardBlank.innerHTML = word;
+		cardBack.innerHTML = definit;
 	}
 }
 
@@ -102,9 +102,9 @@ function getCities() {
 
 	function displayCity() {
 		var cardBlank = document.getElementById("front");
-		cardBlank.innerHTML = "<b>City:&nbsp </b>" + city;
+		cardBlank.innerHTML = city;
 		var cardBack = document.getElementById("back");
-		cardBack.innerHTML = "<b>Country:&nbsp </b>" + country;
+		cardBack.innerHTML = country;
 	}
 }
 
@@ -120,7 +120,6 @@ function displayAlpha() {
 	var cardBack = document.getElementById("back");
 	cardBack.innerHTML = result;
 	cardBlank.innerHTML = result;
-
 }
 
 let numbers = [];
@@ -168,10 +167,10 @@ customButton.addEventListener("click", function (event) {
 		customForm.style.display = "block";
 	}
 });
-
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
+	customForm.style.display = "none";
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
 
@@ -239,6 +238,8 @@ function displayCustom() {
 			event.preventDefault();
 			if (cardBack.style.display = "visible") {
 				flipCard();
+			}else if(cardBack.style.display = "visible"){
+				
 			}
 
 			if (cardBlank.innerHTML == customObj.question1 &&
