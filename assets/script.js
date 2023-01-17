@@ -73,8 +73,8 @@ function getWord() {
 	function displayWord() {
 		var cardBlank = document.getElementById("front");
 		var cardBack = document.getElementById("back");
-		cardBlank.innerHTML = word;
-		cardBack.innerHTML = definit;
+		cardBlank.innerHTML = "<b>Word:&nbsp</b>" + word;
+		cardBack.innerHTML = "<b>Definition:&nbsp</b>" + definit;
 	}
 }
 
@@ -102,9 +102,9 @@ function getCities() {
 
 	function displayCity() {
 		var cardBlank = document.getElementById("front");
-		cardBlank.innerHTML = city;
+		cardBlank.innerHTML = "<b>City:&nbsp</b>" + city;
 		var cardBack = document.getElementById("back");
-		cardBack.innerHTML = country;
+		cardBack.innerHTML = "<b>Country:&nbsp</b>" + country;
 	}
 }
 
