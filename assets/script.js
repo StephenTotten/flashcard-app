@@ -1,54 +1,38 @@
+// Globally scoped variables
 var word;
 var definit;
 var city;
 var country;
 var customObj;
 
+// Global Document Query Selectors
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
 var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
 var form = document.getElementById('form2');
-
-alphabetButton.addEventListener("click", displayAlpha);
-
-numbersButton.addEventListener("click", displayNumber);
-
-definitionsButton.addEventListener("click", getWord);
-
-
-form.addEventListener('submit', displayCustom);
-
-citiesButton.addEventListener("click", getCities);
-
 var container = document.getElementById("container");
 var cardContainer = document.getElementById("cardcontainer");
 
-// Letters Array
+// Click event listeners
+alphabetButton.addEventListener("click", displayAlpha);
+numbersButton.addEventListener("click", displayNumber);
+definitionsButton.addEventListener("click", getWord);
+form.addEventListener('submit', displayCustom);
+citiesButton.addEventListener("click", getCities);
+
+// Data Arrays
 var alphaArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-// Letters Arrays
 var alphaUpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var alphaLowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-
-// Numbers Arrays
 const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",];
 
-
 // Getting random number from Array
-
 const number2 = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",];
-
 const random = Math.floor(Math.random() * number.length);
 
-
-
-// WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
-
+// WordsAPI Fetch Request
 function getWord() {
 	const options = {
 		method: 'GET',
@@ -73,8 +57,8 @@ function getWord() {
 	function displayWord() {
 		var cardBlank = document.getElementById("front");
 		var cardBack = document.getElementById("back");
-		cardBlank.innerHTML = word;
-		cardBack.innerHTML = definit;
+		cardBlank.innerHTML = "<b>Word:&nbsp</b>" + word;
+		cardBack.innerHTML = "<b>Definition:&nbsp</b>" + definit;
 	}
 }
 
@@ -102,12 +86,13 @@ function getCities() {
 
 	function displayCity() {
 		var cardBlank = document.getElementById("front");
-		cardBlank.innerHTML = city;
+		cardBlank.innerHTML = "<b>City:&nbsp</b>" + city;
 		var cardBack = document.getElementById("back");
-		cardBack.innerHTML = country;
+		cardBack.innerHTML = "<b>Country:&nbsp</b>" + country;
 	}
 }
 
+// Function to display letter on flashcard
 function displayAlpha() {
 
 	function getRandomItem(alphaArray) {
@@ -122,11 +107,13 @@ function displayAlpha() {
 	cardBlank.innerHTML = result;
 }
 
+// Selects Number 1 through 100
 let numbers = [];
 for (var i = 0; i <= 100; i++) {
 	numbers.push(i);
 }
 
+// Function to display number on flashcard
 function displayNumber() {
 
 	function randNumber(arr) {
@@ -144,20 +131,12 @@ function displayNumber() {
 
 //Card Flip Function
 const card = document.getElementById("card")
-
 card.addEventListener("click", flipCard)
 function flipCard() {
 	card.classList.toggle("flipCard");
 }
 
-
-
-// fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-
+// Function to hide submit button after form submit
 var customForm = document.getElementById("form");
 customButton.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -167,6 +146,8 @@ customButton.addEventListener("click", function (event) {
 		customForm.style.display = "block";
 	}
 });
+
+// Function to store custom cards as objects
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -222,6 +203,7 @@ submitBtn.addEventListener("click", function (event) {
 	displayCustom();
 });
 
+// Function to display custom flashcards
 function displayCustom() {
 	var cardBlank = document.getElementById("front");
 	var cardBack = document.getElementById("back");
