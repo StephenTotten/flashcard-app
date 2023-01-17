@@ -55,7 +55,6 @@ body {
   align-items: center;
   border-radius: 12px;
   font-size: 55px;
-  text-align: center;
 }
 
 .back{
@@ -71,8 +70,6 @@ body {
   transform: rotateY(180deg);
   border-radius: 12px;
   font-size: 45px;
-  padding: 1em;
-  text-align: center;
 }
 
 .flipCard{
