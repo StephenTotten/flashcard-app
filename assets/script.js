@@ -120,6 +120,7 @@ function displayAlpha() {
 	var cardBack = document.getElementById("back");
 	cardBack.innerHTML = result;
 	cardBlank.innerHTML = result;
+
 }
 
 let numbers = [];
@@ -167,6 +168,7 @@ customButton.addEventListener("click", function (event) {
 		customForm.style.display = "block";
 	}
 });
+
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
