@@ -170,7 +170,6 @@ customButton.addEventListener("click", function (event) {
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
-	customForm.style.display = "none";
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
 
