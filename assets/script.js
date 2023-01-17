@@ -3,6 +3,7 @@ var definit;
 var city;
 var country;
 var customObj;
+var saveButton;
 
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
@@ -12,15 +13,11 @@ var citiesButton = document.querySelector("#cities")
 var form = document.getElementById('form2');
 
 alphabetButton.addEventListener("click", displayAlpha);
-
 numbersButton.addEventListener("click", displayNumber);
-
 definitionsButton.addEventListener("click", getWord);
-
-
 form.addEventListener('submit', displayCustom);
-
 citiesButton.addEventListener("click", getCities);
+
 
 var container = document.getElementById("container");
 var cardContainer = document.getElementById("cardcontainer");
@@ -32,7 +29,6 @@ var alphaArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 // Letters Arrays
 var alphaUpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var alphaLowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
 
 
 // Numbers Arrays
@@ -150,14 +146,6 @@ function flipCard() {
 	card.classList.toggle("flipCard");
 }
 
-
-
-// fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-
 var customForm = document.getElementById("form");
 customButton.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -174,6 +162,7 @@ submitBtn.addEventListener("click", function (event) {
     var newButton = document.createElement("button");
     newButton.setAttribute("class", "flashstackcustom")
     newButton.textContent = document.getElementById("title").value;
+	saveButton = newButton;
     buttonsGroup.appendChild(newButton);
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
@@ -222,11 +211,61 @@ submitBtn.addEventListener("click", function (event) {
 		|| userAnswerFive === "") {
 		errorMessage.innerHTML = "Please fill out every blank!";
 	}
-
+	localStorage.setItem("cardBank", JSON.stringify(cardBank));
+	saveButton.addEventListener("click", displaySaved);
 	displayCustom();
 });
 
 function displayCustom() {
+	var cardBlank = document.getElementById("front");
+	var cardBack = document.getElementById("back");
+	cardBlank.innerHTML = customObj.question1;
+	cardBack.innerHTML = customObj.answer1;
+	showNextButton();
+	function showNextButton() {
+		var x = document.createElement("BUTTON");
+		var t = document.createTextNode(">> Next Card >>");
+		x.appendChild(t);
+		submitBtn.style.display = "none";
+		cardContainer.appendChild(x);
+		x.addEventListener("click", function (event) {
+			event.preventDefault();
+			if (cardBack.style.display = "visible") {
+				flipCard();
+			}else if(cardBack.style.display = "visible"){
+				
+			}
+
+			if (cardBlank.innerHTML == customObj.question1 &&
+				cardBack.innerHTML == customObj.answer1) {
+				cardBlank.innerHTML = customObj.question2
+				cardBack.innerHTML = customObj.answer2
+			} else if (cardBlank.innerHTML == customObj.question2 &&
+				cardBack.innerHTML == customObj.answer2) {
+				cardBlank.innerHTML = customObj.question3
+				cardBack.innerHTML = customObj.answer3
+			} else if (cardBlank.innerHTML == customObj.question3 &&
+				cardBack.innerHTML == customObj.answer3) {
+				cardBlank.innerHTML = customObj.question4
+				cardBack.innerHTML = customObj.answer4
+			} else if (cardBlank.innerHTML == customObj.question4 &&
+				cardBack.innerHTML == customObj.answer4) {
+				cardBlank.innerHTML = customObj.question5
+				cardBack.innerHTML = customObj.answer5
+			} else if (cardBlank.innerHTML == customObj.question5 &&
+				cardBack.innerHTML == customObj.answer5) {
+				cardBlank.innerHTML = customObj.question1
+				cardBack.innerHTML = customObj.answer1
+			}
+			
+		})
+	}
+
+}
+
+function displaySaved() {
+	var customObj = JSON.parse(localStorage.getItem("cardBank"));
+	console.log(customObj);
 	var cardBlank = document.getElementById("front");
 	var cardBack = document.getElementById("back");
 	cardBlank.innerHTML = customObj.question1;
