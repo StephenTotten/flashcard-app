@@ -235,6 +235,21 @@ ul li > * {
   display: none;
 }
 
+/* body {
+    min-height: 100%;
+    line-height: 1;
+    font-family: sans-serif;
+  }
+  
+  header{
+  }
+  nav{
+  } */
+
+/* various headings
+h1 {
+  font-size: 300%;
+}
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
