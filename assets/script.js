@@ -1,10 +1,11 @@
+// Globally scoped variables
 var word;
 var definit;
 var city;
 var country;
 var customObj;
 
-
+// Document Query Selectors
 var alphabetButton = document.querySelector("#alphabet")
 var numbersButton = document.querySelector("#numbers")
 var definitionsButton = document.querySelector("#definitions")
@@ -12,7 +13,10 @@ var customButton = document.querySelector("#custom")
 var citiesButton = document.querySelector("#cities")
 var form = document.getElementById('form2');
 var saveButton = document.getElementById("flashstackcustom");
+var container = document.getElementById("container");
+var cardContainer = document.getElementById("cardcontainer");
 
+// Event Listeners
 alphabetButton.addEventListener("click", displayAlpha);
 numbersButton.addEventListener("click", displayNumber);
 definitionsButton.addEventListener("click", getWord);
@@ -20,32 +24,26 @@ form.addEventListener('submit', displayCustom);
 citiesButton.addEventListener("click", getCities);
 saveButton.addEventListener("click", displaySaved);
 
+// Custom Button Text
+if (saveButton.innerHTML = "") {
+	saveButton.innerHTML = "User-Created List";
+} else {
+	saveButton.innerHTML = localStorage.getItem("title");
+}
 
-var container = document.getElementById("container");
-var cardContainer = document.getElementById("cardcontainer");
-
-// Letters Array
+// Data Arrays
 var alphaArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-// Letters Arrays
 var alphaUpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var alphaLowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-// Numbers Arrays
 const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",];
-
 
 // Getting random number from Array
 
 const number2 = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",];
-
 const random = Math.floor(Math.random() * number.length);
 
 
-
-// WordsAPI Fetch Request, Returns Random Word/Definition and Console Logs it
+// WordsAPI Fetch Request
 
 function getWord() {
 	const options = {
@@ -106,6 +104,7 @@ function getCities() {
 	}
 }
 
+//Function to display Letters
 function displayAlpha() {
 
 	function getRandomItem(alphaArray) {
@@ -125,6 +124,7 @@ for (var i = 0; i <= 100; i++) {
 	numbers.push(i);
 }
 
+// Function to display numbers
 function displayNumber() {
 
 	function randNumber(arr) {
@@ -148,6 +148,7 @@ function flipCard() {
 	card.classList.toggle("flipCard");
 }
 
+// Hides form after submit
 var customForm = document.getElementById("form");
 customButton.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -157,11 +158,11 @@ customButton.addEventListener("click", function (event) {
 		customForm.style.display = "block";
 	}
 });
+
+// Submit button handler
 var submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function (event) {
 	event.preventDefault();
-    //var newButton = document.getElementById("flashstackcustom");
-    //newButton.textContent = document.getElementById("title").value;
 	var errorMessage = document.getElementById("error-message")
 	errorMessage.innerHTML = "";
 
@@ -210,9 +211,11 @@ submitBtn.addEventListener("click", function (event) {
 		errorMessage.innerHTML = "Please fill out every blank!";
 	}
 	localStorage.setItem("cardBank", JSON.stringify(cardBank));
+	localStorage.setItem("title", userTitle);
 	displayCustom();
 });
 
+// Function to display custom flashcards
 function displayCustom() {
 	var cardBlank = document.getElementById("front");
 	var cardBack = document.getElementById("back");
@@ -260,6 +263,7 @@ function displayCustom() {
 
 }
 
+//function to display saved flashcards
 function displaySaved() {
 	var customObj = JSON.parse(localStorage.getItem("cardBank"));
 	console.log(customObj);
